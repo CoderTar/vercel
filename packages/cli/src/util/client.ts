@@ -89,34 +89,19 @@ export default class Client extends EventEmitter implements Stdio {
     this.localConfigPath = opts.localConfigPath;
     this.requestIdCounter = 1;
     this.input = (opts: Parameters<typeof input>[0]) => {
-      return input(opts, {
-        input: this.stdin,
-        output: this.stderr,
-      });
+      return input(opts, { input: this.stdin, output: this.stderr });
     };
     this.checkbox = <T>(opts: Parameters<typeof checkbox<T>>[0]) => {
-      return checkbox<T>(opts, {
-        input: this.stdin,
-        output: this.stderr,
-      });
+      return checkbox<T>(opts, { input: this.stdin, output: this.stderr });
     };
     this.expand = (opts: Parameters<typeof expand>[0]) => {
-      return expand(opts, {
-        input: this.stdin,
-        output: this.stderr,
-      });
+      return expand(opts, { input: this.stdin, output: this.stderr });
     };
     this.confirm = (opts: Parameters<typeof confirm>[0]) => {
-      return confirm(opts, {
-        input: this.stdin,
-        output: this.stderr,
-      });
+      return confirm(opts, { input: this.stdin, output: this.stderr });
     };
     this.select = <T>(opts: Parameters<typeof select<T>>[0]) => {
-      return select<T>(opts, {
-        input: this.stdin,
-        output: this.stderr,
-      });
+      return select<T>(opts, { input: this.stdin, output: this.stderr });
     };
   }
 
