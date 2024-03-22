@@ -262,7 +262,15 @@ export async function ensureRepoLink(
                 };
               })
           ),
-        ],
+        ] as (
+          | Separator
+          | {
+              newProject?: boolean;
+              name: string;
+              value: Project | NewProject;
+              checked: boolean;
+            }
+        )[],
       });
     }
 
